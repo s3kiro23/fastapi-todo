@@ -23,9 +23,7 @@ async def verify_token(token: str = Depends(oauth2_scheme)):
         )
 
 
-@router.post(
-    "/token", status_code=status.HTTP_201_CREATED, dependencies=[Depends(verify_token)]
-)
+@router.post("/token", status_code=status.HTTP_201_CREATED)
 async def generate_token():
     to_encode = {"exp": datetime.utcnow() + timedelta(minutes=30)}
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
