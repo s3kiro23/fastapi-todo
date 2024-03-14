@@ -5,8 +5,8 @@ This project is a FastAPI REST API that provides endpoints for interacting with 
 
 ## Requirements
 
-Mysql
-Python
+- Mysql
+- Python
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/s3kiro23/fastapi-todo-project.git`
@@ -14,9 +14,10 @@ Python
 3. Activate venv: `venv\Scripts\activate`
 4. Upgrade pip: `python -m pip install --upgrade pip`
 5. Install the required dependencies: `pip install -r requirements.txt`
-6. Create your .env then copy .env.development
-6. Set up the database: `python manage.py migrate`
-7. Start the development server: `python manage.py runserver`
+6. Create your .env by copy .env.development
+7. Init migration with Aerich: `aerich init -t db_config.ORM`
+8. Init connection between app & db: `aerich init-db`
+7. Start the development server: `python main.py`
 
 ## Usage
 Create your bearer token first.
