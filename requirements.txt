@@ -3,3 +3,5 @@ uvicorn
 python-dotenv
 aiomysql
 tortoise-orm
+aerich
+python-jose[cryptography]
