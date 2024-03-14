@@ -5,3 +5,4 @@ aiomysql
 tortoise-orm
 aerich
 python-jose[cryptography]
+uwsgi
