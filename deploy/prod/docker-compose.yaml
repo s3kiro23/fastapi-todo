@@ -1,39 +1,7 @@
 version: "3"
 
-networks:
-    innerImage:
-
 services:
     fastapi_todo-awsgi:
         image: 057133510824.dkr.ecr.eu-west-3.amazonaws.com/fastapi_todo:latest
         ports:
             - "8080:8080"
-        depends_on:
-            fastapi_todo-database:
-                condition: service_healthy
-        networks:
-            - innerImage
-    fastapi_todo-database:
-        container_name: db
-        image: mysql
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: $DB_PASS
-            MYSQL_DATABASE: $DB_SCHEMA
-            TZ: Europe/Paris
-        ports:
-            - "9906:3306"
-        networks:
-            - innerImage
-        volumes:
-            - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
-            - type: bind
-              source: /var/dev_data/fastapi_todo/log/
-              target: /var/log/fastapi_todo/
-            - type: bind
-              source: /var/dev_data/fastapi_todo/
-              target: /var/dev_data/fastapi_todo/
-        healthcheck:
-            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-            timeout: 10s
-            retries: 5
