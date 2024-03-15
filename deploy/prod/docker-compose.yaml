@@ -4,7 +4,7 @@ networks:
     innerImage:
 
 services:
-    app:
+    fastapi_todo-awsgi:
         image: 057133510824.dkr.ecr.eu-west-3.amazonaws.com/fastapi_todo:latest
         ports:
             - "8080:8080"
@@ -13,7 +13,7 @@ services:
                 condition: service_healthy
         networks:
             - innerImage
-    database:
+    fastapi_todo-database:
         container_name: db
         image: mysql
         restart: always
