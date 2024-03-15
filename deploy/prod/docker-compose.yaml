@@ -1,0 +1,33 @@
+version: "3"
+
+networks:
+    innerImage:
+
+services:
+    app:
+        build: .
+        ports:
+            - "8080:8080"
+        depends_on:
+            database:
+                condition: service_healthy
+        networks:
+            - innerImage
+    database:
+        container_name: db
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: $DB_PASS
+            MYSQL_DATABASE: $DB_SCHEMA
+            TZ: Europe/Paris
+        ports:
+            - "3306:3306"
+        networks:
+            - innerImage
+        volumes:
+            - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 10s
+            retries: 5
