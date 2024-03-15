@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /opt/fastapi_todo/config.ini
+source /opt/config/config.ini
 
 # Set your AWS credentials (make sure you have the necessary AWS CLI installed and configured)
 echo "AWS Region: $AWS_REGION"

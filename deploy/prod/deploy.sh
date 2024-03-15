@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /opt/fastapi_todo/config.ini
+source /opt/config/config.ini
 
 echo "AWS Region: $AWS_REGION"
 echo "AWS Account ID: $AWS_ACCOUNT_ID"
