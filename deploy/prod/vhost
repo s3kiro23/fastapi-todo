@@ -25,5 +25,5 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    access_log  /var/dev_data/fastapitodo/log/access.log combined;
+    access_log  /var/dev_data/fastapi_todo/log/access.log combined;
 }

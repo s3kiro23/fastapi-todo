@@ -27,6 +27,12 @@ services:
             - innerImage
         volumes:
             - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+            - type: bind
+              source: /var/dev_data/fastapi_todo/log/
+              target: /var/log/fastapi_todo/
+            - type: bind
+              source: /var/dev_data/fastapi_todo/
+              target: /var/dev_data/fastapi_todo/
         healthcheck:
             test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
             timeout: 10s
