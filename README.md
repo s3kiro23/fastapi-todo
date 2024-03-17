@@ -2,6 +2,7 @@
 
 ## Description
 This project is a FastAPI REST API that provides endpoints for interacting with a database.
+We utilized Aerich for migration and Tortoise-ORM for data manipulation.
 
 ## Requirements
 
