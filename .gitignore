@@ -6,4 +6,3 @@ env/
 .idea
 migrations
 *.ini
-docker-compose.yaml
