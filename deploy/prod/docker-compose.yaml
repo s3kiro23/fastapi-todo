@@ -15,7 +15,7 @@ services:
         networks:
             - innerFastAPI
     database:
-        container_name: db
+        container_name: fastapi_todo-db
         image: mysql
         restart: always
         environment:
