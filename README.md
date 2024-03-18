@@ -33,5 +33,5 @@ Method only available with valid token in headers.
   - `/api/token`: POST create a token and return it.
 
 - URL availables:
-  - `api/docs/`: Swagger page to test api.
-  - `api/redoc/`: Redoc api doc.
+  - `/docs/`: Swagger page to test api.
+  - `/redoc/`: Redoc api doc.

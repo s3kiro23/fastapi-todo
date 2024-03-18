@@ -15,7 +15,7 @@ services:
         networks:
             - innerFastAPI
     database:
-        container_name: fastapi_todo-db
+        container_name: prod_fastapi_todo-db
         image: mysql
         restart: always
         environment:
@@ -30,5 +30,5 @@ services:
             - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
         healthcheck:
             test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-            timeout: 10s
+            timeout: 5s
             retries: 3
