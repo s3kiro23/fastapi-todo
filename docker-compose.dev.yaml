@@ -22,7 +22,7 @@ services:
             MYSQL_DATABASE: $DB_SCHEMA
             TZ: Europe/Paris
         ports:
-            - "3306:3306"
+            - "9906:3306"
         networks:
             - innerFastAPI
         volumes:
