@@ -13,10 +13,3 @@ class TodoPost(BaseModel):
 class TodoPut(BaseModel):
     title: Optional[str] = Field(None, min_length=3, max_length=100)
     done: Optional[bool] = Field(None)
-
-
-TokenGet = pydantic_model_creator(Todo, name="TokenGet")
-
-
-class TokenPost(BaseModel):
-    token: str = Field(min_length=3, max_length=100)

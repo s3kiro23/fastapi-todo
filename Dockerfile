@@ -20,4 +20,4 @@ RUN chown -R www-data:www-data /opt/$APP_NAME /var/log/$APP_NAME
 
 EXPOSE 8080
 
-CMD ["uvicorn", "todo.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
