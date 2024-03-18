@@ -1,11 +1,11 @@
 from passlib.hash import bcrypt
 from uuid import uuid4
 from tortoise.models import Model
-from tortoise.fields import CharField, UUIDField, BooleanField, DatetimeField
+from tortoise.fields import CharField, UUIDField, BooleanField, DatetimeField, IntField
 
 
 class User(Model):
-    id = UUIDField(pk=True, default=uuid4)
+    id = IntField(pk=True)
     username = CharField(max_length=100, null=False)
     email = CharField(max_length=100, null=True, unique=True)
     password_hash = CharField(max_length=128, null=True)
