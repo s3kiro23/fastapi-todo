@@ -30,7 +30,7 @@ Method only available with valid token in headers.
   - `/api/v1/{todo_id}/`: GET a todo details.
   - `/api/v1/{todo_id}/`: PUT updata an existing todo.
   - `/api/v1/{todo_id}/`: DELETE a todo in db.
-  - `/api/token`: POST create a token and return it.
+  - `/api/v1/token`: POST create a token and return it.
 
 - URL availables:
   - `/docs/`: Swagger page to test api.
