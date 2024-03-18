@@ -1,12 +1,14 @@
 from fastapi import FastAPI
 from todo.routing import router as todo_router
 from auth.routing import router as auth_router
+from user.routing import router as user_router
 from tortoise.contrib.fastapi import register_tortoise
 from settings.config import Config
 
 app = FastAPI()
 app.include_router(todo_router)
 app.include_router(auth_router)
+app.include_router(user_router)
 
 register_tortoise(
     app,

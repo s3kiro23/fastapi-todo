@@ -6,5 +6,5 @@ values = dotenv_values()
 
 class Config:
     DB_CONNECTION: str = values["DB_CONNECTION"]
-    DB_MODELS: List[str] = ["todo.models", "auth.models"]
+    DB_MODELS: List[str] = ["todo.models", "auth.models", "user.models"]
     SECRET_KEY: str = values["SECRET_KEY"]

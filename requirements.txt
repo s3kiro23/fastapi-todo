@@ -5,3 +5,7 @@ aiomysql
 tortoise-orm
 aerich
 python-jose[cryptography]
+bcrypt
+passlib
+pydantic[email]
+python-multipart

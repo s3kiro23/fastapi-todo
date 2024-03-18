@@ -6,6 +6,8 @@ networks:
 services:
     app:
         build: .
+        volumes:
+            - ./:/opt/fastapi_todo
         ports:
             - "8080:8080"
         depends_on:
