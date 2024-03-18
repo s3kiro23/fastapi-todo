@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-    innerImage:
+    innerFastAPI:
 
 services:
     app:
@@ -12,7 +12,7 @@ services:
             database:
                 condition: service_healthy
         networks:
-            - innerImage
+            - innerFastAPI
     database:
         container_name: db
         image: mysql
@@ -24,16 +24,10 @@ services:
         ports:
             - "3306:3306"
         networks:
-            - innerImage
+            - innerFastAPI
         volumes:
             - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
-            - type: bind
-              source: /var/dev_data/fastapi_todo/log/
-              target: /var/log/fastapi_todo/
-            - type: bind
-              source: /var/dev_data/fastapi_todo/
-              target: /var/dev_data/fastapi_todo/
         healthcheck:
             test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
             timeout: 10s
-            retries: 5
+            retries: 3
